@@ -1,0 +1,126 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="apple-touch-icon" href="apple-touch-icon.png">
+      
+      <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/main.css">
+
+      <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <header>
+      <a class="logo">
+        <img src="img/pasteur.png" width="160" height="116" alt="Pasteur4OA"> <span>/Data Visualisations</span>
+      </a>
+    </header>
+
+    <nav id="nav" role="navigation">
+      <a href="#nav" title="Show navigation"><span>Show navigation</span></a>
+      <a href="#" title="Hide navigation"><span>Hide navigation</span></a>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="/" aria-haspopup="true">ROARMAP data</a>
+          <ul>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/worldwide.html">Number of Open Access Policies Worldwide</a></li>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/map.html">Number of Open Access Policies Worldwide - map</a></li>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/policy.html">Number of Open Access Policies that are mandatory</a></li>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/deposit.html">When Open Access Policies require deposit</a></li>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/apcs.html">Open Access Policies that mention APCs</a></li>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/google-map.html">Google spreadsheet map with live data</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/" aria-haspopup="true">Other data</a>
+          <ul>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/institutional-repository.html">Number of Deposits in Institutional Repositories</a></li>
+            <li><a href="http://pasteur4oa-dataviz.okfn.org/latency.html">Deposit latency on Open Access and restricted access publications</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="banner">
+      <section>
+        <h1>{{ page.title }}</h1>
+        {% if page.introduction %}
+        {{ page.introduction | markdownify }}
+        {% endif %}
+      </section>
+    </div>
+    
+    <main>
+    
+      {{ content }}
+    
+    </main>
+    
+    <aside class="pasteur-footer">
+      <div class="container">
+        <figure>
+          <a href="http://ec.europa.eu/index_el.htm" target="_blank"><img src="img/eu.jpg" width="50" height="50" alt=""></a>
+          <a href="http://cordis.europa.eu/fp7/home_en.html" target="_blank"><img src="img/7fp.jpg" width="43" height="50" alt=""></a>
+        </figure>
+        <strong>PASTEUR4OA</strong><br>Open Access Policy Alignment Strategies for European Union Research funded by the Seventh Framework Programme for Research and Development (FP7)
+      </div>
+    </aside>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <a class="footer-logo" href="https://okfn.org/">
+          <img src="https://bytebucket.org/okfn/assets.okfn.org/raw/88b24904b8ecded5e6d530739743162d1c5b3d93/p/okfn/img/okfn-logo-landscape-white.png" alt="Open Knowledge">
+        </a>
+    
+        <div class="footer-links">
+          <!--
+          <ul>
+            <li><a href="https://okfn.org/privacy-policy/">Privacy policy</a></li>
+            <li><a href="https://okfn.org/ip-policy/">IP policy</a></li>
+            <li><a href="https://okfn.org/cookie-policy/">Cookie policy</a></li>
+            <li><a href="https://okfn.org/terms-of-use/">Terms of use</a></li>
+          </ul>
+          -->
+    
+          <ul class="footer-social">
+            <li><a href="https://facebook.com/OKFNetwork">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+              </a></li>
+            <li>
+              <a href="https://twitter.com/okfn">
+                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/user/openknowledgefdn">
+                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <hr>
+    
+        <p>Open Knowledge Foundation is incorporated in England and Wales as a company Limited by guarantee. Company no. 05133759. Registered address: St. John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, UK. VAT Registration no. GB 984404989.</p>
+        
+      </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/vendor/doubletaptogo.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

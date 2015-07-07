@@ -1,0 +1,328 @@
+---
+# Main Sass file needs front matter
+---
+
+@import "normalize";
+@import "susy";
+
+$primary: #333333;
+$secondary: #555A5C;
+$accent: #93BF1E;
+
+$fonts: Arial,Helvetica,Verdana,"Bitstream Vera Sans",sans-serif;
+$heading-fonts: 'Droid Sans', $fonts;
+
+$base-spacing: 20px;
+$container-width: 960px;
+$medium-screen: "only screen and (min-width : 35em)";
+
+h1, h2, h3,
+h4, h5, h6 {
+  @extend %headings !optional;
+}
+
+$susy: (
+  container: $container-width,
+);
+
+%headings {
+  font-family:$heading-fonts;
+  font-weight:700;
+}
+
+html {
+    color: $primary;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family:$fonts;
+}
+
+body {
+  background-color:#fff;
+  padding-left:$base-spacing;
+  padding-right:$base-spacing;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+a {
+  color:darken($accent, 10%);
+  
+  &:visited {
+    color:darken($accent, 20%);
+  }
+}
+
+p {
+  margin-top:0;
+  margin-bottom:1em;
+}
+
+%headings {
+  margin-top:1.4em;
+  margin-bottom:0.4em;
+}
+
+
+body > header,
+body > section,
+body > div > section,
+body > main,
+.container {
+  @include container;
+}
+
+
+header {
+  padding:10px;
+  
+  .logo {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:24px;
+    position:relative;
+    display:block;
+    color:$secondary;
+    
+    span {
+      display:block;
+      font-size:14px;
+      
+      @media #{$medium-screen} {
+        position:absolute;
+        line-height:116px;
+        top:0;
+        left:150px;
+      }
+    }
+  }
+}
+
+
+#nav {
+  margin-left:-$base-spacing;
+  margin-right:-$base-spacing;
+  
+  & > ul > li > a {
+    font-family:$heading-fonts;
+  }
+}
+
+.banner {
+  background-color:rgba($accent, 0.1);
+  margin-left:-$base-spacing;
+  margin-right:-$base-spacing;
+  padding-left:$base-spacing;
+  padding-right:$base-spacing;
+  
+  & > section {
+    padding-top:20px;
+    padding-bottom:20px;
+    
+    @media #{$medium-screen} {
+      padding-top:40px;
+      padding-bottom:40px;
+    }
+    
+    & > %headings {
+      margin-top:0;
+    }
+    
+    & > :last-child {
+      margin-bottom:0;
+    }
+  }
+}
+
+
+@import "nav"; 
+
+
+.pasteur-footer {
+  padding:$base-spacing;
+  margin-top:$base-spacing * 2;
+  font-size:0.8em;
+  background-color:$accent;
+  margin-left:-$base-spacing;
+  margin-right:-$base-spacing;
+  padding-left:$base-spacing;
+  padding-right:$base-spacing;
+  
+  figure {
+    float:left;
+    margin:0 $base-spacing 0 0;
+    background-color:#fff;
+    padding:2px;
+    
+    a {
+      display:block;
+      float:left;
+    }
+  }
+}
+
+.site-footer {
+  margin-left:-$base-spacing;
+  margin-right:-$base-spacing;
+  padding-left:$base-spacing;
+  padding-right:$base-spacing;
+}
+@import "footer";
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
